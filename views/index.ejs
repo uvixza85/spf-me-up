@@ -3,21 +3,60 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Uv index</title>
+    <link rel="stylesheet" href="/Styles/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&family=Indie+Flower&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <% if (locals.uvindex){ %>
     <h1>UV INDEX AT THIS LOCATION IS <%=uvindex %></h1>
-    <% if (uvindex> 7){ %>
-    <h1>
-      🌞 Uh-oh, the UV index is higher than your GPA dreams — slap on that
-      sunscreen or get toasted like your morning bread! 🍞🧴 #SPFIsYourBFF
-    </h1>
-    <% }else if (uvindex>5) { %>
-    <h1>😎 Moderate UV vibes. Sunscreen is still your BFF.</h1>
-    <% } else{ %>
-    <h1>🌤 Chill UV day. Still, SPF never hurts!</h1>
-    <% } %> <% } else { %>
+    <div id="meme">
+      <% if (uvindex> 7){ %>
+      <h2>
+        🌞 Uh-oh, the UV index is higher than your GPA dreams <br />
+        Slap on that sunscreen or get toasted like your morning bread! 🍞🧴
+        <br />
+        #SPFIsYourBFF
+      </h2>
+      <img
+        src="Images/tom.png"
+        alt="Tom applying sunscreen"
+        width="330"
+        height="350"
+      />
+      <div id="box">
+        <p>⚠️ REAPPLY OR REGRET</p>
+      </div>
+      <% }else if (uvindex>5) { %>
+      <h2>😎 Moderate UV vibes. Sunscreen is still your BFF.</h2>
+      <img
+        src="Images/penguin.png"
+        alt="Girl in a jacket"
+        width="450"
+        height="500"
+      />
+      <% } else{ %>
+      <h2>🌤 Chill UV day. Still, SPF never hurts!</h2>
+      <img
+        src="Images/dog.png"
+        alt="Girl in a jacket"
+        width="400"
+        height="500"
+      />
+      <% } %>
+    </div>
+    <% } else { %>
     <form action="/submit" method="POST">
       <label for="Lati">Latitude:</label><br />
       <input type="text" id="fname" name="Lati" /><br />

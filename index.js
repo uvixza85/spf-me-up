@@ -5,6 +5,8 @@ import bodyParser from "body-parser";
 const app = express()
 const port = 3000
 
+app.use(express.static('public'));
+
 const config = {
   headers: { "x-access-token":"openuv-3lxjgmrm9jzlt9i-io" },
 };

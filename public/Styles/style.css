@@ -1,0 +1,84 @@
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+    flex-direction: column;
+
+}
+body{
+    background:linear-gradient(45deg, #FF6B00, #FFD700,#FF6B6B);
+}
+
+
+input[type="text"] {
+    width: 300px;
+    padding: 10px;
+    margin: 10px 0;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    border: 1px solid #888;
+}
+
+
+input[type="text"]:focus {
+    border: 3px solid yellow;
+}
+
+form {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+label {
+    font-size: 20px;
+}
+
+input[type="submit"] {
+    background-color: #ffcb05;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+#meme{
+    background-color: #FF9B17;
+    width: 650px;
+    height: 600px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+h2{
+    padding-top: 0;
+   padding-right: 30px;
+   padding-left: 30px;
+font-family: "DynaPuff", system-ui;
+    font-optical-sizing: auto;
+    font-weight: lighter;
+    font-style: italic;
+    font-variation-settings:
+        "wdth" 100;
+        color: purple;
+}
+
+p{
+    
+    background-color: red;
+    border-radius: 5px;
+    width: fit-content;
+
+
+}
+
+h1{
+    font-family: "Oswald", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: <weight>;
+        font-style: normal;
+}
