@@ -6,6 +6,26 @@
     <title>Document</title>
   </head>
   <body>
-    <h1><%=uvindex %></h1>
+    <% if (locals.uvindex){ %>
+    <h1>UV INDEX AT THIS LOCATION IS <%=uvindex %></h1>
+    <% if (uvindex> 7){ %>
+    <h1>
+      🌞 Uh-oh, the UV index is higher than your GPA dreams — slap on that
+      sunscreen or get toasted like your morning bread! 🍞🧴 #SPFIsYourBFF
+    </h1>
+    <% }else if (uvindex>5) { %>
+    <h1>😎 Moderate UV vibes. Sunscreen is still your BFF.</h1>
+    <% } else{ %>
+    <h1>🌤 Chill UV day. Still, SPF never hurts!</h1>
+    <% } %> <% } else { %>
+    <form action="/submit" method="POST">
+      <label for="Lati">Latitude:</label><br />
+      <input type="text" id="fname" name="Lati" /><br />
+      <label for="Longi">Longitude:</label><br />
+      <input type="text" id="lname" name="Longi" /><br />
+      <input type="submit" value="Submit" />
+    </form>
+
+    <% } %>
   </body>
 </html>

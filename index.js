@@ -9,16 +9,25 @@ const config = {
   headers: { "x-access-token":"openuv-3lxjgmrm9jzlt9i-io" },
 };
 
+app.use(bodyParser.urlencoded({ extended: true }));
+
 app.get('/', async (req, res) => {
+    res.render("index.ejs",{ uvindex: null });
+})
+
+app.post("/submit", async (req, res) => {
+    const Lati = req.body.Lati;
+    const Longi = req.body.Longi;
     try{
-    const result = await axios.get("https://api.openuv.io/api/v1/uv?lat=13.13&lng=77.59&alt=100", config);
-    res.render("index.ejs", { uvindex: result.data.result.uv });
-    console.log(result.data.result.uv);
+    const result = await axios.get(`https://api.openuv.io/api/v1/uv?lat=${Lati}&lng=${Longi}&alt=100`, config);
+    const uvindex = result.data.result.uv ;
+    res.render("index.ejs", { uvindex: uvindex });
   } catch (error) {
     console.log(error);
     res.status(500)
   }
-})
+});
+
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
