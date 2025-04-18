@@ -20,6 +20,11 @@ app.get('/', async (req, res) => {
 app.get('/cordi', async (req, res) => {
     res.render("index.ejs");
 })
+
+app.get('/home', async (req, res) => {
+    res.render("home.ejs");
+})
+
 app.get('/auto', async (req, res) => {
     try {
       const result1 = await axios.get("https://api.ip2location.io/");
@@ -33,7 +38,6 @@ app.get('/auto', async (req, res) => {
     } catch (error) {
       console.log(error);
       res.status(500)
-      
     }
 })
 

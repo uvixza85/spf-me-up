@@ -79,6 +79,11 @@ p{
 h1{
     font-family: "Oswald", sans-serif;
         font-optical-sizing: auto;
-        font-weight: <weight>;
-        font-style: normal;
+        
+}
+
+#home{
+    position: absolute;
+        top: 10px;
+        left: 10px;
 }
