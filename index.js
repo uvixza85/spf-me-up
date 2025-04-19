@@ -8,7 +8,6 @@ const port = 3000;
 
 app.use(express.static('public'));
 
-// header configuration for openuv api
 const config = {
   headers: { "x-access-token": process.env.OPEN_UV_ACCESS_TOKEN },
 };
@@ -21,10 +20,6 @@ app.get('/', async (req, res) => {
 
 app.get('/cordi', async (req, res) => {
   res.render("index.ejs");
-});
-
-app.get('/home', async (req, res) => {
-  res.render("home.ejs");
 });
 
 app.get('/auto', async (req, res) => {
