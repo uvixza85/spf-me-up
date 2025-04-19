@@ -1,6 +1,7 @@
 import express from "express";
 import axios from "axios";
 import bodyParser from "body-parser";
+import 'dotenv/config'
 
 const app = express()
 const port = 3000
@@ -8,7 +9,7 @@ const port = 3000
 app.use(express.static('public'));
 
 const config = {
-  headers: { "x-access-token":"openuv-3lxjgmrm9jzlt9i-io" },
+  headers: { "x-access-token": process.env.OPEN_UV_ACCESS_TOKEN},
 };
 
 app.use(bodyParser.urlencoded({ extended: true }));
