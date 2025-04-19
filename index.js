@@ -8,6 +8,7 @@ const port = 3000;
 
 app.use(express.static('public'));
 
+// header configuration for openuv api
 const config = {
   headers: { "x-access-token": process.env.OPEN_UV_ACCESS_TOKEN },
 };
@@ -24,9 +25,13 @@ app.get('/cordi', async (req, res) => {
 
 app.get('/auto', async (req, res) => {
   try {
+
+    // get latitude and longitude from ip 
     const responseLocation = await axios.get("https://api.ip2location.io/");
     const latitude = responseLocation.data.latitude;
     const longitude = responseLocation.data.longitude;
+
+    // get uvindex from that longitude and latitude
     const responseUvIndex = await axios.get(`https://api.openuv.io/api/v1/uv?lat=${latitude}&lng=${longitude}&alt=100`, config);
     const uvindex = responseUvIndex.data.result.uv;
     res.render("index.ejs", { uvindex: uvindex });
@@ -40,6 +45,8 @@ app.post("/submit", async (req, res) => {
   const latitude = req.body.latitude;
   const longitude = req.body.longitude;
   try {
+
+    // get uvindex from user latitude and longitude taken from user input
     const responseUvIndex = await axios.get(`https://api.openuv.io/api/v1/uv?lat=${latitude}&lng=${longitude}&alt=100`, config);
     const uvindex = responseUvIndex.data.result.uv;
     res.render("index.ejs", { uvindex: uvindex });
